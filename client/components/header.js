@@ -3,25 +3,36 @@ import Accounts from './accounts';
 import { Link, browserHistory } from 'react-router';
 
 class Header extends Component {
-  onBinClick() {
+  onDocClick() {
     event.preventDefault();
 
-    Meteor.call('bins.insert', (error, binId) => {
-      browserHistory.push(`/bins/${binId}`);
+    Meteor.call('docs.insert', (error, docId) => {
+      browserHistory.push(`/docs/${docId}`);
     });
   }
   render() {
     return (
-      <nav className="nav navbar-default">
+      <nav className="nav navbar-inverse">
         <div className="navbar-header">
           <Link to="/" className="navbar-brand">Network</Link>
         </div>
         <ul className="nav navbar-nav">
           <li>
-            <Accounts />
+            <a href="#" onClick={this.onDocClick.bind(this)}><span className="glyphicon glyphicon-list-alt"></span> New Document</a>
           </li>
           <li>
-            <a href="#" onClick={this.onBinClick.bind(this)}>Create Bin</a>
+            <a href="#"><span className="glyphicon glyphicon-ok"></span> Todos</a>
+          </li>
+          <li>
+            <Link to="/employees"><span className="glyphicon glyphicon-user"></span> Users</Link>  
+          </li>
+        </ul>
+        <ul className="nav navbar-nav navbar-right">
+          <li>
+            <a href="#"><span className="glyphicon glyphicon-user"></span> Profile</a>
+          </li>
+          <li>
+            <Accounts />
           </li>
         </ul>
       </nav>

@@ -8,7 +8,7 @@
   height: 55px;
 }
 
-.bins-share {
+.docs-share {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -17,10 +17,35 @@
   margin: 10px;
 }
 
-.bins-share .input-group {
+.docs-share .input-group {
   width: 30%;
 }
 
-.bins-share > div {
+.docs-share > div {
   margin: 0 5px;
+}
+
+.editorbutton {
+  margin-top: 5px;
+}
+
+.employee-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.thumbnail {
+  width: 280px;
+  padding-top: 30px;
+  margin-top: 30px;
+  border: 2px solid lightgrey;
+}
+
+.caption {
+  text-align: center;
+}
+
+.btn-loadmore {
+  border-radius: 0;
 }

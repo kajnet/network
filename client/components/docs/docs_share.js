@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class BinsShare extends Component {
+class DocsShare extends Component {
   onShareClick() {
     const email = this.refs.email.value;
-    Meteor.call('bins.share', this.props.bin, email);
+    Meteor.call('docs.share', this.props.doc, email);
   }
 
   renderShareList() {
-    return this.props.bin.sharedWith.map(email => {
+    return this.props.doc.sharedWith.map(email => {
       return <button
         key={email}
         className="btn btn-default">
@@ -18,12 +18,12 @@ class BinsShare extends Component {
 
   render() {
     return (
-      <footer className="bins-share">
+      <footer className="docs-share">
         <div className="input-group">
-          <input ref="email" className="form-control" />
+          <input ref="email" className="form-control" placeholder="Enter Email" />
           <div className="input-group-btn">
-            <button onClick={this.onShareClick.bind(this)} className="btn btn-default">
-              Share Bin
+            <button onClick={this.onShareClick.bind(this)} className="btn btn-success">
+              Share Document
             </button>
           </div>
         </div>
@@ -38,4 +38,4 @@ class BinsShare extends Component {
   }
 }
 
-export default BinsShare;
+export default DocsShare;

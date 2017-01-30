@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { markdown } from 'markdown';
 
-class BinsViewer extends Component {
+class DocsViewer extends Component {
   render() {
-    const rawHTML = markdown.toHTML(this.props.bin.content);
+    const rawHTML = markdown.toHTML(this.props.doc.content);
 
     return (
-      <div className="col-xs-4">
+      <div className="col-xs-6">
         <h5>Output</h5>
         <div dangerouslySetInnerHTML={{ __html: rawHTML }}></div>
       </div>
@@ -14,4 +14,4 @@ class BinsViewer extends Component {
   }
 }
 
-export default BinsViewer;
+export default DocsViewer;

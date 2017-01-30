@@ -3,22 +3,18 @@ import ReactDOM from 'react-dom';
 import { Template } from 'meteor/templating';
 import { Blaze } from 'meteor/blaze';
 
-class Accounts extends Component {
+export default class AccountsUIWrapper extends Component {
   componentDidMount() {
-    // Render Blaze accounts form
-    // Find rendered div and place form into div
+    // Use Meteor Blaze to render Login buttons
     this.view = Blaze.render(Template.loginButtons,
       ReactDOM.findDOMNode(this.refs.container));
   }
   componentWillUnmount() {
-    // Find forms created and remove them to clean up
+    // Clean.remove(this.view);
     Blaze.remove(this.view);
   }
   render() {
-    return (
-      <div ref="container"></div>
-    );
+    // Just render a placeholder container that will be filled in
+    return <span ref="container" />;
   }
 }
-
-export default Accounts;

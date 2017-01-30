@@ -2,23 +2,33 @@ import React, { Component } from 'react';
 import CodeMirror from 'react-codemirror';
 import 'codemirror/mode/markdown/markdown';
 
-class BinsEditor extends Component {
+class DocsEditor extends Component {
   onEditorChange(content) {
     // console.log(content);
-    Meteor.call('bins.update', this.props.bin, content);
+    Meteor.call('docs.update', this.props.doc, content);
   }
+
+  // onEditClick() {
+  //   event.preventDefault();
+  //
+  //   Meteor.call()
+  // }
 
   render() {
     return(
-      <div className="col-xs-8">
+      <div className="col-xs-6">
         <h5>Input</h5>
         <CodeMirror
-          value={this.props.bin.content}
+          value={this.props.doc.content}
           onChange={ this.onEditorChange.bind(this) }
           options={{ mode: 'markdown', lineNumbers: true }} />
+        <div>
+          <button className="editorbutton btn btn-primary">Output</button>
+        </div>
       </div>
+
     );
   }
 }
 
-export default BinsEditor;
+export default DocsEditor;
