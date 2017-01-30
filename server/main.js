@@ -5,7 +5,6 @@ import { Employees } from '../imports/collections/employees';
 import { image, helpers } from 'faker';
 
 Meteor.startup(() => {
-  // code to run on server at startup
   const numberRecords = Employees.find({}).count();
   // console.log(numberRecords);
   if (!numberRecords) {
@@ -34,11 +33,6 @@ Meteor.startup(() => {
 
     if (!user) { return; }
 
-    // const email = user.emails[0].address;
-    //
-    // return Docs.find({
-    //   sharedWith: { $elemMatch: { $eq: email }}
-    // });
     const emails = user.emails.map(email => email.address);
 
     return Docs.find({

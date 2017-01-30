@@ -10,7 +10,7 @@ class DocsShare extends Component {
     return this.props.doc.sharedWith.map(email => {
       return <button
         key={email}
-        className="btn btn-default">
+        className="btn btn-success">
           {email}
         </button>
     });

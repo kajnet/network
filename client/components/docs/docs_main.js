@@ -15,6 +15,8 @@ class DocsMain extends Component {
 
     return (
       <div>
+        {/* Taking the doc model and passing it into
+           the DocsEditor as a prop called doc */}
         <DocsEditor doc={this.props.doc} />
         <DocsViewer doc={this.props.doc} />
         <DocsShare doc={this.props.doc} />

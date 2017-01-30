@@ -10,17 +10,15 @@ class DocsList extends Component {
 
   renderList() {
     return this.props.docs.map(doc => {
-      // The ES5 way
+
       const url = "/docs/" + doc._id;
-      // Or do the same code as ES6
-      // const url = `/docs/${doc._id}`;
 
       return (
         <li className="list-group-item" key={doc._id}>
           <Link to={url}>Document {doc._id}</Link>
           <span className="pull-right">
             <button className="btn btn-danger" onClick={() => this.onDocRemove(doc)}>
-              Remove
+              Delete
             </button>
           </span>
         </li>

@@ -7,7 +7,7 @@ class Header extends Component {
     event.preventDefault();
 
     Meteor.call('docs.insert', (error, docId) => {
-      browserHistory.push(`/docs/${docId}`);
+      browserHistory.push("/docs/" + docId);
     });
   }
   render() {
@@ -24,7 +24,7 @@ class Header extends Component {
             <a href="#"><span className="glyphicon glyphicon-ok"></span> Todos</a>
           </li>
           <li>
-            <Link to="/employees"><span className="glyphicon glyphicon-user"></span> Users</Link>  
+            <Link to="/employees"><span className="glyphicon glyphicon-user"></span> Users</Link>
           </li>
         </ul>
         <ul className="nav navbar-nav navbar-right">

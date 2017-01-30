@@ -23,12 +23,8 @@ Meteor.methods({
   },
 
   'docs.share': function(doc, email) {
-    return Docs.update(doc._id, { $push: { sharedWith: email } });
+    return Docs.update(doc._id, { $addToSet: { sharedWith: email } });
   }
-
-  // 'docs.share': function(doc, email) {
-  //   return Docs.update(doc._id, { $addToSet: { sharedWith: email } });
-  // }
 });
 
 export const Docs = new Mongo.Collection('docs');

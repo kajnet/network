@@ -7,7 +7,6 @@ import App from './components/app';
 import DocsMain from './components/docs/docs_main';
 import DocsList from './components/docs/docs_list';
 import { Docs } from '../imports/collections/docs';
-import Todo from './components/todos/todo';
 import EmployeeList from './components/employees/employee_list';
 
 const routes = (

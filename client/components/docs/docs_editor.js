@@ -8,12 +8,6 @@ class DocsEditor extends Component {
     Meteor.call('docs.update', this.props.doc, content);
   }
 
-  // onEditClick() {
-  //   event.preventDefault();
-  //
-  //   Meteor.call()
-  // }
-
   render() {
     return(
       <div className="col-xs-6">
