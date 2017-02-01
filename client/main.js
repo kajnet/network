@@ -8,6 +8,7 @@ import DocsMain from './components/docs/docs_main';
 import DocsList from './components/docs/docs_list';
 import { Docs } from '../imports/collections/docs';
 import EmployeeList from './components/employees/employee_list';
+import TodosMain from './components/todos/todos_main';
 
 const routes = (
   <Router history={browserHistory}>
@@ -15,7 +16,7 @@ const routes = (
       <IndexRoute component={DocsList} />
       <Route path="employees" component={EmployeeList} />
       <Route path="docs/:docId" component={DocsMain} />
-      {/* <Route path="todo" component={Todo} /> */}
+      <Route path="todos" component={TodosMain} />
     </Route>
   </Router>
 );

@@ -21,7 +21,7 @@ class Header extends Component {
             <a href="#" onClick={this.onDocClick.bind(this)}><span className="glyphicon glyphicon-list-alt"></span> New Document</a>
           </li>
           <li>
-            <a href="#"><span className="glyphicon glyphicon-ok"></span> Todos</a>
+            <Link to="/todos"><span className="glyphicon glyphicon-ok"></span> Todos</Link>
           </li>
           <li>
             <Link to="/employees"><span className="glyphicon glyphicon-user"></span> Users</Link>

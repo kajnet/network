@@ -2,6 +2,7 @@ import _ from 'lodash';
 import { Meteor } from 'meteor/meteor';
 import { Docs } from '../imports/collections/docs';
 import { Employees } from '../imports/collections/employees';
+import { Tasks } from '../imports/collections/todos';
 import { image, helpers } from 'faker';
 
 Meteor.startup(() => {
@@ -19,6 +20,10 @@ Meteor.startup(() => {
       });
     });
   }
+
+  Meteor.publish('todos', function() {
+    return Todos.find({ ownerId: this.userId });
+  });
 
   Meteor.publish('employees', function(per_page) {
     return Employees.find({}, { limit: per_page });
